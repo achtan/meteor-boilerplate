@@ -2,6 +2,11 @@ Users = Meteor.users;
 
 var Schema = {};
 
+var roles = [];
+_.each(Meteor.App.ROLES, function(value, key, list) {
+  roles.push(value);
+});
+
 Schema.User = new SimpleSchema({
   name: {
     type: String,
@@ -31,14 +36,12 @@ Schema.User = new SimpleSchema({
   roles: {
     type: Array,
     minCount: 1,
-    defaultValue: ["admin"]
+    defaultValue: [Meteor.App.ROLES.ADMIN]
   },
   "roles.$": {
     type: String,
     optional: true,
-    allowedValues: [
-        "admin", "seller"
-    ]
+    allowedValues: roles
   }
 });
 
