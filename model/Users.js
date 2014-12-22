@@ -1,4 +1,4 @@
-Users = Mongo.users;
+Users = Meteor.users;
 
 var roles = [];
 _.each(Meteor.App.ROLES, function(value, key, list) {
