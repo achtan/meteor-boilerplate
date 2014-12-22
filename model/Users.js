@@ -1,3 +1,5 @@
+Users = Mongo.users;
+
 var roles = [];
 _.each(Meteor.App.ROLES, function(value, key, list) {
   roles.push(value);
