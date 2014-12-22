@@ -1,13 +1,9 @@
-Users = Meteor.users;
-
-var Schema = {};
-
 var roles = [];
 _.each(Meteor.App.ROLES, function(value, key, list) {
   roles.push(value);
 });
 
-Schema.User = new SimpleSchema({
+Meteor.users.attachSchema(new SimpleSchema({
   name: {
     type: String,
     optional: true
@@ -43,6 +39,4 @@ Schema.User = new SimpleSchema({
     optional: true,
     allowedValues: roles
   }
-});
-
-Meteor.users.attachSchema(Schema.User);
+}));
