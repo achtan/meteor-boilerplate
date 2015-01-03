@@ -34,7 +34,7 @@ Meteor.users.attachSchema(new SimpleSchema({
   roles: {
     type: Array,
     minCount: 1,
-    defaultValue: [Meteor.App.ROLES.ADMIN]
+    defaultValue: [Meteor.App.ROLES.USER]
   },
   "roles.$": {
     type: String,
