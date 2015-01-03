@@ -1,7 +1,7 @@
 Users = Meteor.users;
 
 var roles = [];
-_.each(Meteor.App.ROLES, function(value, key, list) {
+_.each(Meteor.App.ROLES, function(value) {
   roles.push(value);
 });
 
